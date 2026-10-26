@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epic International School | Pink October Awareness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sound / start gate (needed for browser audio) -->
+  <div class="gate" id="gate">
+    <div class="gate-card">
+      <span class="big-emoji" aria-hidden="true">🎀</span>
+      <h2>Pink October</h2>
+      <p class="ar-line" dir="rtl">أكتوبر الوردي</p>
+      <p>Tap to start with fun sounds &amp; colors</p>
+      <p dir="rtl" style="font-family:Cairo,sans-serif">اضغط للبدء مع أصوات وألوان ممتعة</p>
+      <button type="button" class="start-btn" id="startBtn">Start · ابدأ ✨</button>
+    </div>
+  </div>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <div class="bg" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <span class="ribbon-float r1">🎀</span>
+    <span class="ribbon-float r2">💗</span>
+    <span class="ribbon-float r3">🌸</span>
+    <span class="ribbon-float r4">💖</span>
+    <span class="ribbon-float r5">✨</span>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">E</div>
+      <div>
+        <strong>Epic International School</strong>
+        <span>مدرسة إيبك الدولية</span>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true">
+      <div class="progress-fill" id="progress"></div>
+    </div>
+    <div class="counter" id="counter">1 / 8</div>
+    <button type="button" class="sound-btn" id="soundBtn" title="Sound on/off" aria-label="Toggle sound">🔊</button>
+  </header>
+
+  <main class="deck" id="deck">
+    <!-- 1: Title -->
+    <section class="slide active" data-slide="1">
+      <div class="slide-inner title-slide">
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 320 200" role="img">
+            <defs>
+              <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff2d7a"/>
+                <stop offset="50%" stop-color="#ff6b9d"/>
+                <stop offset="100%" stop-color="#ffc857"/>
+              </linearGradient>
+            </defs>
+            <!-- soft cloud -->
+            <ellipse cx="160" cy="150" rx="110" ry="28" fill="#fff" opacity="0.7"/>
+            <!-- big ribbon -->
+            <g transform="translate(160,95)">
+              <path d="M0,-55 C28,-55 48,-30 48,-5 C48,28 18,48 0,70 C-18,48 -48,28 -48,-5 C-48,-30 -28,-55 0,-55 Z" fill="url(#ribbonGrad)" opacity="0.95"/>
+              <path d="M-8,70 Q-40,110 -70,130" stroke="#ff2d7a" stroke-width="18" fill="none" stroke-linecap="round"/>
+              <path d="M8,70 Q40,110 70,130" stroke="#ff6b9d" stroke-width="18" fill="none" stroke-linecap="round"/>
+              <circle cx="-22" cy="-8" r="10" fill="#fff" opacity="0.45"/>
+            </g>
+            <!-- stars -->
+            <circle cx="48" cy="40" r="6" fill="#ffc857"/>
+            <circle cx="272" cy="55" r="5" fill="#7ec8ff"/>
+            <circle cx="70" cy="100" r="4" fill="#5ee0b5"/>
+            <circle cx="260" cy="110" r="5" fill="#ff9ec8"/>
+          </svg>
+        </div>
+        <p class="eyebrow">🎀 October · تشرين الأول 🎀</p>
+        <h1>
+          <span class="en">Breast Cancer Awareness</span>
+          <span class="ar" dir="rtl">التوعية بسرطان الثدي</span>
+        </h1>
+        <p class="subtitle">
+          <span class="en">A colorful message for our Epic kids</span>
+          <span class="ar" dir="rtl">رسالة ملوّنة لأطفال إيبك</span>
+        </p>
+        <div class="pill">Together we care · معًا نهتم 💗</div>
+      </div>
+    </section>
+
+    <!-- 2: What is this month -->
+    <section class="slide" data-slide="2">
+      <div class="slide-inner">
+        <div class="sticker-row" aria-hidden="true">
+          <span class="sticker">📅</span>
+          <span class="sticker">💗</span>
+          <span class="sticker">🤝</span>
+          <span class="sticker">🌈</span>
+        </div>
+        <h2 class="section-title">
+          <span class="en">What is this month about?</span>
+          <span class="ar" dir="rtl">عن ماذا يتحدث هذا الشهر؟</span>
+        </h2>
+        <div class="split">
+          <article class="panel en-panel">
+            <div class="icon">📅</div>
+            <h3><span class="lang-flag">🇬🇧</span> English</h3>
+            <p>October is a special pink month! We learn how to support people we love, and remember that early care helps.</p>
+            <p>We talk about kindness, hope, and healthy habits — in a simple, happy way.</p>
+          </article>
+          <article class="panel ar-panel" dir="rtl">
+            <div class="icon">📅</div>
+            <h3><span class="lang-flag">🇸🇦</span> عربي</h3>
+            <p>أكتوبر شهر وردي خاص! نتعلم كيف ندعم من نحب، ونتذكر أن الاهتمام المبكر بالصحة مفيد.</p>
+            <p>نتحدث عن اللطف والأمل والعادات الصحية — بطريقة بسيطة وسعيدة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3: Pink ribbon -->
+    <section class="slide" data-slide="3">
+      <div class="slide-inner">
+        <div class="sticker-row" aria-hidden="true">
+          <span class="sticker">🎀</span>
+          <span class="sticker">💕</span>
+          <span class="sticker">🎀</span>
+          <span class="sticker">✨</span>
+        </div>
+        <h2 class="section-title">
+          <span class="en">The pink ribbon</span>
+          <span class="ar" dir="rtl">الشريطة الوردية</span>
+        </h2>
+        <div class="split">
+          <article class="panel en-panel">
+            <div class="icon big">🎀</div>
+            <h3><span class="lang-flag">🇬🇧</span> English</h3>
+            <p>The pink ribbon is a symbol of support and hope.</p>
+            <p>When we wear pink or see the ribbon, we say: <strong>“We care, and we stand together!”</strong></p>
+          </article>
+          <article class="panel ar-panel" dir="rtl">
+            <div class="icon big">🎀</div>
+            <h3><span class="lang-flag">🇸🇦</span> عربي</h3>
+            <p>الشريطة الوردية رمز للدعم والأمل.</p>
+            <p>عندما نلبس الوردي أو نرى الشريطة نقول: <strong>«نهتم، ونقف معًا!»</strong></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4: Bodies -->
+    <section class="slide" data-slide="4">
+      <div class="slide-inner">
+        <div class="sticker-row" aria-hidden="true">
+          <span class="sticker">💪</span>
+          <span class="sticker">🧠</span>
+          <span class="sticker">❤️</span>
+          <span class="sticker">🌟</span>
+        </div>
+        <h2 class="section-title">
+          <span class="en">Our bodies are precious</span>
+          <span class="ar" dir="rtl">أجسامنا غالية</span>
+        </h2>
+        <div class="split">
+          <article class="panel en-panel">
+            <div class="icon">💪</div>
+            <h3><span class="lang-flag">🇬🇧</span> English</h3>
+            <p>Our body helps us play, learn, and grow. Looking after it is a smart and kind habit!</p>
+            <ul>
+              <li>Tell a trusted adult if something feels wrong</li>
+              <li>Rest when we are tired</li>
+              <li>Eat colorful, healthy food</li>
+            </ul>
+          </article>
+          <article class="panel ar-panel" dir="rtl">
+            <div class="icon">💪</div>
+            <h3><span class="lang-flag">🇸🇦</span> عربي</h3>
+            <p>جسمنا يساعدنا على اللعب والتعلّم والنمو. الاعتناء به عادة ذكية ولطيفة!</p>
+            <ul>
+              <li>أخبر شخصًا كبيرًا تثق به إذا شعرت أن شيئًا غير طبيعي</li>
+              <li>ارتَح عندما تتعب</li>
+              <li>تناول طعامًا صحيًا وملوّنًا</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5: How kids help -->
+    <section class="slide" data-slide="5">
+      <div class="slide-inner">
+        <h2 class="section-title">
+          <span class="en">How can kids help?</span>
+          <span class="ar" dir="rtl">كيف يساعد الأطفال؟</span>
+        </h2>
+        <div class="cards">
+          <div class="card" data-sfx="pop">
+            <span class="card-icon">🤗</span>
+            <p class="en">Be kind and listen</p>
+            <p class="ar" dir="rtl">كن لطيفًا واستمع</p>
+          </div>
+          <div class="card" data-sfx="pop">
+            <span class="card-icon">🎨</span>
+            <p class="en">Join school pink day</p>
+            <p class="ar" dir="rtl">شارك في يوم الوردي</p>
+          </div>
+          <div class="card" data-sfx="pop">
+            <span class="card-icon">💌</span>
+            <p class="en">Write a hope note</p>
+            <p class="ar" dir="rtl">اكتب رسالة أمل</p>
+          </div>
+          <div class="card" data-sfx="pop">
+            <span class="card-icon">🗣️</span>
+            <p class="en">Share what you learned</p>
+            <p class="ar" dir="rtl">شارك ما تعلمته</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6: Habits -->
+    <section class="slide" data-slide="6">
+      <div class="slide-inner">
+        <div class="sticker-row" aria-hidden="true">
+          <span class="sticker">🏃</span>
+          <span class="sticker">💧</span>
+          <span class="sticker">😴</span>
+          <span class="sticker">😊</span>
+        </div>
+        <h2 class="section-title">
+          <span class="en">Healthy habits together</span>
+          <span class="ar" dir="rtl">عادات صحية معًا</span>
+        </h2>
+        <div class="split">
+          <article class="panel en-panel">
+            <div class="icon">🥗</div>
+            <h3><span class="lang-flag">🇬🇧</span> English</h3>
+            <div class="habit-row" style="grid-template-columns:1fr">
+              <div class="habit"><span class="n">1</span> Move and play every day</div>
+              <div class="habit"><span class="n">2</span> Drink enough water</div>
+              <div class="habit"><span class="n">3</span> Sleep well at night</div>
+              <div class="habit"><span class="n">4</span> Smile and support friends</div>
+            </div>
+          </article>
+          <article class="panel ar-panel" dir="rtl">
+            <div class="icon">🥗</div>
+            <h3><span class="lang-flag">🇸🇦</span> عربي</h3>
+            <div class="habit-row" style="grid-template-columns:1fr">
+              <div class="habit"><span class="n">١</span> تحرّك والعب كل يوم</div>
+              <div class="habit"><span class="n">٢</span> اشرب ماءً كافيًا</div>
+              <div class="habit"><span class="n">٣</span> نم جيدًا في الليل</div>
+              <div class="habit"><span class="n">٤</span> ابتسم وادعم أصدقاءك</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7: Hope -->
+    <section class="slide" data-slide="7">
+      <div class="slide-inner">
+        <div class="sticker-row" aria-hidden="true">
+          <span class="sticker">✨</span>
+          <span class="sticker">🌈</span>
+          <span class="sticker">💖</span>
+          <span class="sticker">🌻</span>
+        </div>
+        <h2 class="section-title">
+          <span class="en">A message of hope</span>
+          <span class="ar" dir="rtl">رسالة أمل</span>
+        </h2>
+        <div class="split">
+          <article class="panel en-panel hope">
+            <div class="icon">✨</div>
+            <h3><span class="lang-flag">🇬🇧</span> English</h3>
+            <p>Many people get better with care and support. Science, doctors, and loving families work as a team.</p>
+            <p class="quote">“Hope grows when we care for each other.” 💗</p>
+          </article>
+          <article class="panel ar-panel hope" dir="rtl">
+            <div class="icon">✨</div>
+            <h3><span class="lang-flag">🇸🇦</span> عربي</h3>
+            <p>كثير من الناس يتحسّنون بالعناية والدعم. العلم والأطباء والعائلات المحبّة يعملون كفريق واحد.</p>
+            <p class="quote">«الأمل يكبر عندما نهتم ببعضنا.» 💗</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8: Closing -->
+    <section class="slide" data-slide="8">
+      <div class="slide-inner title-slide">
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 320 160" role="img">
+            <defs>
+              <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff2d7a"/>
+                <stop offset="100%" stop-color="#ffc857"/>
+              </linearGradient>
+            </defs>
+            <path transform="translate(160,85) scale(1.35)" d="M0,28 C0,28 -36,-2 -36,-22 C-36,-36 -24,-44 -12,-44 C-4,-44 0,-38 0,-38 C0,-38 4,-44 12,-44 C24,-44 36,-36 36,-22 C36,-2 0,28 0,28 Z" fill="url(#heartGrad)"/>
+            <circle cx="70" cy="40" r="8" fill="#7ec8ff"/>
+            <circle cx="250" cy="45" r="7" fill="#5ee0b5"/>
+            <circle cx="90" cy="120" r="6" fill="#ffc857"/>
+            <circle cx="240" cy="115" r="6" fill="#ff9ec8"/>
+          </svg>
+        </div>
+        <h1>
+          <span class="en">Thank you, Epic family!</span>
+          <span class="ar" dir="rtl">شكرًا عائلة إيبك!</span>
+        </h1>
+        <p class="subtitle">
+          <span class="en">Wear pink. Be kind. Spread hope.</span>
+          <span class="ar" dir="rtl">البس الوردي. كن لطيفًا. انشر الأمل.</span>
+        </p>
+        <div class="pill">Epic International School · مدرسة إيبك الدولية</div>
+        <p class="tiny">
+          <span class="en">Awareness for children · Ask a trusted adult if you have questions.</span>
+          <span class="ar" dir="rtl">توعية للأطفال · اسأل شخصًا كبيرًا تثق به إذا كان لديك سؤال.</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <p class="hint" id="hint">← → arrows · أسهم لوحة المفاتيح</p>
+
+  <nav class="nav" aria-label="Presentation controls">
+    <button type="button" id="prev" class="nav-btn nav-side nav-prev" aria-label="Previous slide">
+      <span class="nav-arrow">‹</span>
+      <span class="nav-label">Prev<br /><small>السابق</small></span>
+    </button>
+    <div class="dots" id="dots" role="tablist" aria-label="Slides"></div>
+    <button type="button" id="next" class="nav-btn nav-side nav-next primary" aria-label="Next slide">
+      <span class="nav-label">Next<br /><small>التالي</small></span>
+      <span class="nav-arrow">›</span>
+    </button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
