@@ -7,12 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <!-- Sound / start gate (needed for browser audio) -->
   <div class="gate" id="gate">
     <div class="gate-card">
+      <img class="gate-logo" src="logo.png?v=3" alt="Iepec International School" width="280" height="80" onerror="this.onerror=null;this.src='https://www.iia.edu.jo/images/logo.png'" />
+      <p class="gate-school-en">Iepec International School</p>
+      <p class="gate-school-ar" dir="rtl">أكاديمية آيبك الدولية</p>
       <span class="big-emoji" aria-hidden="true">🎀</span>
       <h2>Pink October</h2>
       <p class="ar-line" dir="rtl">أكتوبر الوردي</p>
@@ -37,7 +40,7 @@
 
   <header class="topbar">
     <a class="brand" href="https://www.iia.edu.jo/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9" target="_blank" rel="noopener noreferrer">
-      <img class="logo-img" src="logo.png" alt="Iepec International School" width="200" height="56" />
+      <img class="logo-img" src="logo.png?v=3" alt="Iepec International School" width="200" height="56" onerror="this.onerror=null;this.src='https://www.iia.edu.jo/images/logo.png'" />
       <div class="brand-text">
         <strong>Iepec International School</strong>
         <span>أكاديمية آيبك الدولية</span>
@@ -54,30 +57,10 @@
     <!-- 1: Title -->
     <section class="slide active" data-slide="1">
       <div class="slide-inner title-slide">
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 320 200" role="img">
-            <defs>
-              <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ff2d7a"/>
-                <stop offset="50%" stop-color="#ff6b9d"/>
-                <stop offset="100%" stop-color="#ffc857"/>
-              </linearGradient>
-            </defs>
-            <!-- soft cloud -->
-            <ellipse cx="160" cy="150" rx="110" ry="28" fill="#fff" opacity="0.7"/>
-            <!-- big ribbon -->
-            <g transform="translate(160,95)">
-              <path d="M0,-55 C28,-55 48,-30 48,-5 C48,28 18,48 0,70 C-18,48 -48,28 -48,-5 C-48,-30 -28,-55 0,-55 Z" fill="url(#ribbonGrad)" opacity="0.95"/>
-              <path d="M-8,70 Q-40,110 -70,130" stroke="#ff2d7a" stroke-width="18" fill="none" stroke-linecap="round"/>
-              <path d="M8,70 Q40,110 70,130" stroke="#ff6b9d" stroke-width="18" fill="none" stroke-linecap="round"/>
-              <circle cx="-22" cy="-8" r="10" fill="#fff" opacity="0.45"/>
-            </g>
-            <!-- stars -->
-            <circle cx="48" cy="40" r="6" fill="#ffc857"/>
-            <circle cx="272" cy="55" r="5" fill="#7ec8ff"/>
-            <circle cx="70" cy="100" r="4" fill="#5ee0b5"/>
-            <circle cx="260" cy="110" r="5" fill="#ff9ec8"/>
-          </svg>
+        <div class="school-hero">
+          <img class="school-hero-logo" src="logo.png?v=3" alt="Iepec International School" width="360" height="100" onerror="this.onerror=null;this.src='https://www.iia.edu.jo/images/logo.png'" />
+          <p class="school-hero-en">Iepec International School</p>
+          <p class="school-hero-ar" dir="rtl">أكاديمية آيبك الدولية</p>
         </div>
         <p class="eyebrow">🎀 October · تشرين الأول 🎀</p>
         <h1>
@@ -293,20 +276,10 @@
     <!-- 8: Closing -->
     <section class="slide" data-slide="8">
       <div class="slide-inner title-slide">
-        <div class="hero-art" aria-hidden="true">
-          <svg viewBox="0 0 320 160" role="img">
-            <defs>
-              <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ff2d7a"/>
-                <stop offset="100%" stop-color="#ffc857"/>
-              </linearGradient>
-            </defs>
-            <path transform="translate(160,85) scale(1.35)" d="M0,28 C0,28 -36,-2 -36,-22 C-36,-36 -24,-44 -12,-44 C-4,-44 0,-38 0,-38 C0,-38 4,-44 12,-44 C24,-44 36,-36 36,-22 C36,-2 0,28 0,28 Z" fill="url(#heartGrad)"/>
-            <circle cx="70" cy="40" r="8" fill="#7ec8ff"/>
-            <circle cx="250" cy="45" r="7" fill="#5ee0b5"/>
-            <circle cx="90" cy="120" r="6" fill="#ffc857"/>
-            <circle cx="240" cy="115" r="6" fill="#ff9ec8"/>
-          </svg>
+        <div class="school-hero">
+          <img class="school-hero-logo" src="logo.png?v=3" alt="Iepec International School" width="320" height="90" onerror="this.onerror=null;this.src='https://www.iia.edu.jo/images/logo.png'" />
+          <p class="school-hero-en">Iepec International School</p>
+          <p class="school-hero-ar" dir="rtl">أكاديمية آيبك الدولية</p>
         </div>
         <h1>
           <span class="en">Thank you, Iepec family!</span>
