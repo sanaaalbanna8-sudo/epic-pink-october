@@ -158,35 +158,31 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
 }
 
-.logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 1.35rem;
-  color: white;
-  background: linear-gradient(145deg, var(--pink-hot), var(--coral));
-  box-shadow: 0 8px 20px rgba(255, 45, 122, 0.35);
-  animation: pulse-logo 2.4s ease-in-out infinite;
+.logo-img {
+  height: 52px;
+  width: auto;
+  max-width: min(220px, 42vw);
+  object-fit: contain;
+  border-radius: 12px;
+  background: #0a0a0a;
+  padding: 4px 8px;
+  box-shadow: 0 8px 20px rgba(74, 33, 64, 0.18);
+  flex-shrink: 0;
 }
 
-@keyframes pulse-logo {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-}
-
-.brand strong {
+.brand-text strong {
   display: block;
   font-size: 0.95rem;
   line-height: 1.15;
   color: var(--ink);
 }
 
-.brand span {
+.brand-text span {
   display: block;
   font-family: var(--ar);
   font-size: 0.82rem;
@@ -487,10 +483,6 @@ body {
   background: var(--pink-pale);
   padding: 4px 12px;
   border-radius: 999px;
-}
-
-.lang-flag {
-  font-size: 1.1rem;
 }
 
 .panel p {
@@ -912,15 +904,18 @@ body {
   }
 }
 
+@media (max-width: 720px) {
+  .brand-text {
+    display: none;
+  }
+
+  .logo-img {
+    height: 44px;
+    max-width: min(180px, 55vw);
+  }
+}
+
 @media (max-width: 520px) {
-  .brand strong {
-    font-size: 0.78rem;
-  }
-
-  .brand span {
-    font-size: 0.7rem;
-  }
-
   .ribbon-float {
     font-size: 1.5rem;
   }
